@@ -3,6 +3,11 @@ import random
 import prompt
 
 
+def is_even(number):
+
+    return number % 2 == 0
+
+
 def game():
 
     CORRECT_TO_WIN = 3
@@ -17,7 +22,7 @@ def game():
         random_number = random.randint(MIN_NUMBER, MAX_NUMBER)
         print(f'Question: {random_number}')
         user_answer = prompt.string('Your answer: ')
-        right_answer = 'yes' if random_number % 2 == 0 else 'no'
+        right_answer = 'yes' if is_even(random_number) else 'no'
         if user_answer == right_answer:
             print('Correct!')
             right_counter += 1
