@@ -1,10 +1,18 @@
 import random
 
-#from math import a
-from .common_part import CORRECT_TO_WIN
-from .common_part import welcome, get_user_name, is_answer_is_right, loose_message, win_message
+from .common_part import (
+    CORRECT_TO_WIN, 
+    MAX_NUMBER,
+    MIN_NUMBER, 
+    get_user_name, 
+    is_answer_is_right,
+    loose_message, 
+    welcome,
+    win_message
+)
 
-def gcd(a,b):
+
+def gcd(a, b):
 
     a = abs(a) 
     b = abs(b)
@@ -14,11 +22,8 @@ def gcd(a,b):
         a = temp
     return a
 
-def game():
 
-    ##CORRECT_TO_WIN = 3
-    MIN_NUMBER = 1
-    MAX_NUMBER = 100
+def game():
 
     welcome()
 
@@ -34,7 +39,8 @@ def game():
 
         right_answer = gcd(random_number1, random_number2)
 
-        if is_answer_is_right(user_name, f'{random_number1} {random_number2}', f'{right_answer}'):
+        if is_answer_is_right(user_name, f'{random_number1} {random_number2}', 
+                              f'{right_answer}'):
             right_counter += 1
         else:
             loose_message(user_name)   

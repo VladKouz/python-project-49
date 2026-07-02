@@ -1,9 +1,17 @@
 import random
 
-#import prompt
+# import prompt
+from .common_part import (
+    CORRECT_TO_WIN,
+    MAX_NUMBER,
+    MIN_NUMBER,
+    get_user_name,
+    is_answer_is_right,
+    loose_message,
+    welcome,
+    win_message,
+)
 
-from .common_part import CORRECT_TO_WIN
-from .common_part import welcome, get_user_name, is_answer_is_right, loose_message, win_message
 
 def is_even(number):
 
@@ -11,10 +19,6 @@ def is_even(number):
 
 
 def game():
-
-    ##CORRECT_TO_WIN = 3
-    MIN_NUMBER = 1
-    MAX_NUMBER = 100
 
     welcome()
 

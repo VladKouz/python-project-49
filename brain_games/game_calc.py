@@ -1,16 +1,18 @@
 import random
 
-#import prompt
-
-from .common_part import CORRECT_TO_WIN
-from .common_part import welcome, get_user_name, is_answer_is_right, loose_message, win_message
+from .common_part import (
+    CORRECT_TO_WIN,
+    MAX_NUMBER,
+    MIN_NUMBER,
+    get_user_name,
+    is_answer_is_right,
+    loose_message,
+    welcome,
+    win_message,
+)
 
 
 def game():
-
-    ##CORRECT_TO_WIN = 3
-    MIN_NUMBER = 1
-    MAX_NUMBER = 100
 
     welcome()
 
@@ -23,7 +25,7 @@ def game():
 
         random_number1 = random.randint(MIN_NUMBER, MAX_NUMBER)
         random_number2 = random.randint(MIN_NUMBER, MAX_NUMBER)
-        random_sign = random.choice(["+","-","*"])
+        random_sign = random.choice(["+", "-", "*"])
         match random_sign:
             case "+":
                 right_answer = random_number1 + random_number2
@@ -32,7 +34,8 @@ def game():
             case "*":
                 right_answer = random_number1 * random_number2
 
-        if is_answer_is_right(user_name, f'{random_number1} {random_sign} {random_number2}', f'{right_answer}'):
+        if is_answer_is_right(user_name, f'{random_number1} {random_sign} {random_number2}', 
+                              f'{right_answer}'):
             right_counter += 1
         else:
             loose_message(user_name)   
