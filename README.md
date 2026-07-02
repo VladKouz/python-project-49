@@ -1,4 +1,5 @@
 ### Hexlet tests and linter status:
+
 [![Actions Status](https://github.com/VladKouz/python-project-49/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/VladKouz/python-project-49/actions)
 
 ### SonarQube bages:
@@ -25,4 +26,8 @@
 
 ### Even game aciinema:
 
+### brain-even
 [![asciicast](https://asciinema.org/a/BpFFWF6sDVkDxzNe.svg)](https://asciinema.org/a/BpFFWF6sDVkDxzNe)
+
+### brain-calc
+[![asciicast](https://asciinema.org/a/ZOL4dhjCb5PA3wmm.svg)](https://asciinema.org/a/ZOL4dhjCb5PA3wmm)

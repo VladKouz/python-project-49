@@ -18,7 +18,7 @@ def get_user_name():
 
 def win_message(user):
 
-    print(f'Congratulations, {user}')
+    print(f'Congratulations, {user}!')
 
 def loose_message(user):
      
