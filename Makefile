@@ -20,4 +20,4 @@ reinstall:
 	uv tool install --force dist/*.whl
 
 uninstall:
-	uv tool uninstall dist/*.whl
+	uv tool uninstall --all
