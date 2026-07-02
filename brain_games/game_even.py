@@ -1,7 +1,9 @@
 import random
 
-import prompt
+#import prompt
 
+from .common_part import CORRECT_TO_WIN
+from .common_part import welcome, get_user_name, is_answer_is_right, loose_message, win_message
 
 def is_even(number):
 
@@ -10,26 +12,24 @@ def is_even(number):
 
 def game():
 
-    CORRECT_TO_WIN = 3
+    ##CORRECT_TO_WIN = 3
     MIN_NUMBER = 1
     MAX_NUMBER = 100
 
-    user_name = prompt.string('May I have your name? ')
-    print(f'Hello, {user_name}!')
+    welcome()
+
+    user_name = get_user_name()
+
     print('Answer "yes" if the number is even, otherwise answer "no".')
+
     right_counter = 0
     while right_counter < CORRECT_TO_WIN:
         random_number = random.randint(MIN_NUMBER, MAX_NUMBER)
-        print(f'Question: {random_number}')
-        user_answer = prompt.string('Your answer: ')
         right_answer = 'yes' if is_even(random_number) else 'no'
-        if user_answer == right_answer:
-            print('Correct!')
+        if is_answer_is_right(user_name, random_number, right_answer):
             right_counter += 1
         else:
-            print(f"'{user_answer}' is wrong answer ;(. "
-                f"Correct answer was '{right_answer}'.")
-            print(f"Let's try again, {user_name}!")
+            loose_message(user_name)   
             break
         if right_counter == 3:
-            print(f'Congratulations, {user_name}')
+            win_message(user_name)
