@@ -1,6 +1,5 @@
 import prompt
 
-
 CORRECT_TO_WIN = 3
 MIN_NUMBER = 1
 MAX_NUMBER = 100

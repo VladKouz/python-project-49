@@ -1,14 +1,14 @@
 import random
 
 from .common_part import (
-    CORRECT_TO_WIN, 
+    CORRECT_TO_WIN,
     MAX_NUMBER,
-    MIN_NUMBER, 
-    get_user_name, 
+    MIN_NUMBER,
+    get_user_name,
     is_answer_is_right,
-    loose_message, 
+    loose_message,
     welcome,
-    win_message
+    win_message,
 )
 
 

@@ -34,8 +34,11 @@ def game():
             case "*":
                 right_answer = random_number1 * random_number2
 
-        if is_answer_is_right(user_name, f'{random_number1} {random_sign} {random_number2}', 
-                              f'{right_answer}'):
+        if is_answer_is_right(
+            user_name, 
+            f'{random_number1} {random_sign} {random_number2}', 
+            f'{right_answer}'
+            ):
             right_counter += 1
         else:
             loose_message(user_name)   
