@@ -1,0 +1,10 @@
+from brain_games import game_progression
+
+
+def main():
+
+    game_progression.game()
+
+
+if __name__ == "__main__":
+    main()

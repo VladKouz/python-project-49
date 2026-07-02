@@ -45,5 +45,5 @@ def game():
         else:
             loose_message(user_name)   
             break
-        if right_counter == 3:
+        if right_counter == CORRECT_TO_WIN:
             win_message(user_name)
