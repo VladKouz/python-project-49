@@ -1,6 +1,3 @@
 .venv
 .DS_Store
 .vscode
-brain_games/__pycache__/
-brain_games/scripts/__pycache__/
-demo.cast
