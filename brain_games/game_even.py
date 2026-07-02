@@ -31,5 +31,5 @@ def game():
                 f"Correct answer was '{right_answer}'.")
             print(f"Let's try again, {user_name}!")
             break
-
-    print(f'Congratulations, {user_name}')
+        if right_counter == 3:
+            print(f'Congratulations, {user_name}')
