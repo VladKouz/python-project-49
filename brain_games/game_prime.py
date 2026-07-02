@@ -29,7 +29,7 @@ def game():
 
     user_name = get_user_name()
 
-    print('Answer "yes" if given number is prime.')
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
     right_counter = 0
     while right_counter < CORRECT_TO_WIN:
