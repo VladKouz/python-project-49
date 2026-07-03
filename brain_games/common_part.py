@@ -1,3 +1,6 @@
+#
+#  Общий функционал всех игр
+#
 import prompt
 
 CORRECT_TO_WIN = 3
