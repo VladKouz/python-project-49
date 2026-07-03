@@ -45,8 +45,8 @@ def game():
         )
         right_answer = random_progression[random_number]
         match random_number:
-            case 0: question = '.. '+' '.join(map(str, random_progression[:random_number]))
-            case 9: question = ' '.join(map(str, random_progression[random_number:])) + ' ..'
+            case 0: question = '.. '+' '.join(map(str, random_progression[random_number + 1:]))
+            case 9: question = ' '.join(map(str, random_progression[:random_number])) + ' ..'
             case _: question = ' '.join(map(str, random_progression[:random_number])) + \
                             ' .. ' + \
                             ' '.join(map(str, random_progression[random_number + 1:]))
