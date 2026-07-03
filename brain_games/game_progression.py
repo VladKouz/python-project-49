@@ -41,9 +41,12 @@ def game():
             random.randint(MIN_NUMBER, MAX_NUMBER // 10)
         )
         right_answer = random_progression[random_number]
-        question = ' '.join(map(str, random_progression[:random_number])) + \
-            ' .. ' + \
-            ' '.join(map(str, random_progression[random_number + 1:]))
+        match random_number:
+            case 0: question = '.. '+' '.join(map(str, random_progression[:random_number]))
+            case 9: question = ' '.join(map(str, random_progression[:random_number])) + ' ..'
+            case _: question = ' '.join(map(str, random_progression[:random_number])) + \
+                            ' .. ' + \
+                            ' '.join(map(str, random_progression[random_number + 1:]))
         if is_answer_is_right(user_name, question, 
                               f'{right_answer}'):
             right_counter += 1
