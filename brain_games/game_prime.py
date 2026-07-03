@@ -20,7 +20,6 @@ from .common_part import (
 QUESTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
-# Старая версия - работает на импортированных функциях из общего модуля
 def is_simple(number):
     temp = 2
     simple = 'yes'
@@ -32,6 +31,7 @@ def is_simple(number):
     return simple
 
 
+# Старая версия - работает на импортированных функциях из общего модуля
 def oldgame():
 
     welcome()
@@ -63,7 +63,5 @@ def game():
 
         random_number = random.randint(MIN_NUMBER, MAX_NUMBER)
         right_answer = is_simple(random_number)
-        questions_answers.append(
-            [f'{random_number}', right_answer]
-            )
+        questions_answers.append([f'{random_number}', f'{right_answer}'])
     common_game(QUESTION, questions_answers)
