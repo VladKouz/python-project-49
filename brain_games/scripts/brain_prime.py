@@ -1,7 +1,7 @@
 #
 #  Скрипт запуска игры Простое число
 #
-from brain_games import game_prime
+from brain_games.games import game_prime
 
 
 def main():

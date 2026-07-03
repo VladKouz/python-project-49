@@ -1,7 +1,7 @@
 #
 #  Тестовое задание, в ппроекте не используется
 #
-from brain_games import cli
+from brain_games.games import cli
 
 
 def main():

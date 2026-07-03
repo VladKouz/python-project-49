@@ -1,7 +1,7 @@
 #
 #  Скрипт запуска игры Проверка на четность
 #
-from brain_games import game_even
+from brain_games.games import game_even
 
 
 def main():
