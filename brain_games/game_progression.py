@@ -7,8 +7,8 @@ import random
 
 from .common_part import (
     CORRECT_TO_WIN,
-    MAX_NUMBER,
-    MIN_NUMBER,
+    #MAX_NUMBER,
+    #MIN_NUMBER,
     get_user_name,
     is_answer_is_right,
     loose_message,
@@ -17,6 +17,9 @@ from .common_part import (
 )
 
 PROGRESSION_LENGTH = 10
+PROGRESSION_MIN = 1
+PROGRESSION_START_MAX = 11
+PROGRESSION_STEP_MAX = 9
 
 
 def progression(start, increment, count=PROGRESSION_LENGTH):
@@ -37,8 +40,8 @@ def game():
 
         random_number = random.randint(0, PROGRESSION_LENGTH - 1)
         random_progression = progression(
-            random.randint(MIN_NUMBER, MAX_NUMBER // 10),
-            random.randint(MIN_NUMBER, MAX_NUMBER // 10)
+            random.randint(PROGRESSION_MIN, PROGRESSION_START_MAX),
+            random.randint(PROGRESSION_MIN, PROGRESSION_STEP_MAX)
         )
         right_answer = random_progression[random_number]
         match random_number:
