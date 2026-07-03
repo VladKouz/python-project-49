@@ -17,9 +17,6 @@ from .common_part import (
 )
 
 PROGRESSION_LENGTH = 10
-#PROGRESSION_MIN = 1
-#PROGRESSION_START_MAX = 11
-#PROGRESSION_STEP_MAX = 9
 
 
 def progression(start, increment, count=PROGRESSION_LENGTH):
