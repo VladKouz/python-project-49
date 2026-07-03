@@ -7,6 +7,9 @@ requires-python = ">=3.13"
 dependencies = [
     "prompt>=0.4.1",
 ]
+authors = [
+    {name = "Vladimir Kuznetsov", email = "kuznetmail@gmail.com"}
+]
 
 [build-system]
 requires = ["hatchling"]
