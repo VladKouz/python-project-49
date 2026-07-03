@@ -37,8 +37,8 @@ def game():
 
         random_number = random.randint(0, PROGRESSION_LENGTH - 1)
         random_progression = progression(
-            random.randint(MIN_NUMBER, MAX_NUMBER),
-            random.randint(MIN_NUMBER, MAX_NUMBER)
+            random.randint(MIN_NUMBER, MAX_NUMBER/10),
+            random.randint(MIN_NUMBER, MAX_NUMBER/10)
         )
         right_answer = random_progression[random_number]
         question = ' '.join(map(str, random_progression[:random_number])) + \
