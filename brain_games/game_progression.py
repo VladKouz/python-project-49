@@ -101,6 +101,6 @@ def game():
                     map(str, random_progression[random_number + 1:])
                     )
         questions_answers.append(
-            [question, right_answer]
+            [question, f'{right_answer}']
             )
     common_game(QUESTION, questions_answers)
