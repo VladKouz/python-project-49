@@ -56,6 +56,6 @@ def game():
         random_number = random.randint(MIN_NUMBER, MAX_NUMBER)
         right_answer = 'yes' if is_even(random_number) else 'no'
         questions_answers.append(
-            [f'{random_number}', right_answer]
+            [f'{random_number}', f'{right_answer}']
             )
     common_game(QUESTION, questions_answers)
