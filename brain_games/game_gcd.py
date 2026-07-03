@@ -9,12 +9,15 @@ from .common_part import (
     CORRECT_TO_WIN,
     MAX_NUMBER,
     MIN_NUMBER,
+    common_game,
     get_user_name,
     is_answer_is_right,
     loose_message,
     welcome,
     win_message,
 )
+
+QUESTION = 'Find the greatest common divisor of given numbers.'
 
 
 def gcd(a, b):
@@ -28,22 +31,21 @@ def gcd(a, b):
     return a
 
 
-def game():
+# Старая версия - работает на импортированных функциях из общего модуля
+def oldgame():
 
     welcome()
 
     user_name = get_user_name()
 
-    print('Find the greatest common divisor of given numbers.')
+    print(QUESTION)
 
     right_counter = 0
     while right_counter < CORRECT_TO_WIN:
 
         random_number1 = random.randint(MIN_NUMBER, MAX_NUMBER)
         random_number2 = random.randint(MIN_NUMBER, MAX_NUMBER)
-
         right_answer = gcd(random_number1, random_number2)
-
         if is_answer_is_right(user_name, f'{random_number1} {random_number2}', 
                               f'{right_answer}'):
             right_counter += 1
@@ -52,3 +54,18 @@ def game():
             break
         if right_counter == CORRECT_TO_WIN:
             win_message(user_name)
+
+
+# Новая версия - формируется список вопрос-ответ и общая функция-сценарий
+def game():
+
+    questions_answers = []
+    for i in range(CORRECT_TO_WIN):
+
+        random_number1 = random.randint(MIN_NUMBER, MAX_NUMBER)
+        random_number2 = random.randint(MIN_NUMBER, MAX_NUMBER)
+        right_answer = gcd(random_number1, random_number2)
+        questions_answers.append(
+            [f'{random_number1} {random_number2}', f'{right_answer}']
+            )
+    common_game(QUESTION, questions_answers)

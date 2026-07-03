@@ -9,6 +9,7 @@ from .common_part import (
     CORRECT_TO_WIN,
     MAX_NUMBER,
     MIN_NUMBER,
+    common_game,
     get_user_name,
     is_answer_is_right,
     loose_message,
@@ -16,14 +17,17 @@ from .common_part import (
     win_message,
 )
 
+QUESTION = 'What is the result of the expression?'
 
-def game():
+
+# Старая версия - работает на импортированных функциях из общего модуля
+def oldgame():
 
     welcome()
 
     user_name = get_user_name()
 
-    print('What is the result of the expression?')
+    print(QUESTION)
 
     right_counter = 0
     while right_counter < CORRECT_TO_WIN:
@@ -50,3 +54,25 @@ def game():
             break
         if right_counter == CORRECT_TO_WIN:
             win_message(user_name)
+
+
+# Новая версия - формируется список вопрос-ответ и общая функция-сценарий
+def game():
+    questions_answers = []
+    for i in range(CORRECT_TO_WIN):
+
+        random_number1 = random.randint(MIN_NUMBER, MAX_NUMBER)
+        random_number2 = random.randint(MIN_NUMBER, MAX_NUMBER)
+        random_sign = random.choice(["+", "-", "*"])
+        match random_sign:
+            case "+":
+                right_answer = random_number1 + random_number2
+            case "-":
+                right_answer = random_number1 - random_number2
+            case "*":
+                right_answer = random_number1 * random_number2
+        questions_answers.append(
+            [f'{random_number1} {random_sign} {random_number2}', 
+            f'{right_answer}']
+            )
+    common_game(QUESTION, questions_answers)

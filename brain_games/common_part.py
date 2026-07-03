@@ -3,9 +3,9 @@
 #
 import prompt
 
-CORRECT_TO_WIN = 3
-MIN_NUMBER = 1
-MAX_NUMBER = 100
+CORRECT_TO_WIN = 3  # Число раундов, оно же число правильных ответов
+MIN_NUMBER = 1     # Минимум всех генераторов случаных чисел
+MAX_NUMBER = 100   # Максимум всех генераторов случайных чисел
 
 
 def welcome():
@@ -45,3 +45,23 @@ def is_answer_is_right(user, question, answer):
         return False
 
 
+# Функция-сценарий: задает 3 вопроса, сверяет 3 ответа...
+def common_game(anwer_format, questions_answers):
+
+    welcome()
+    user_name = get_user_name()
+    print(anwer_format)
+    right_counter = 0
+    for question_answer in questions_answers:
+        if is_answer_is_right(
+            user_name, question_answer[0], question_answer[1]
+            ):
+            right_counter += 1
+        else:
+            break
+    if right_counter >= CORRECT_TO_WIN:
+        win_message(user_name)
+    else:
+        loose_message(user_name) 
+
+       
