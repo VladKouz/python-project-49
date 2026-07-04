@@ -21,9 +21,11 @@ QUESTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def is_simple(number):
+    if number < 2:
+        return 'no'
     temp = 2
     simple = 'yes'
-    while temp < number // temp:
+    while temp < number:
         if number % temp == 0:
             simple = 'no'
             break
